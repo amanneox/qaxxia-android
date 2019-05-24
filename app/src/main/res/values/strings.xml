@@ -1,3 +1,11 @@
 <resources>
+    <!-- App Name -->
     <string name="app_name">Qaxxia</string>
+
+    <!-- Bottom Navigation Items -->
+    <string name="bottom_item1">Item_1</string>
+    <string name="bottom_item2">Item_2</string>
+    <string name="bottom_item3">Item_3</string>
+    <string name="bottom_item4">Item_4</string>
+    <string name="bottom_item5">Item_5</string>
 </resources>
