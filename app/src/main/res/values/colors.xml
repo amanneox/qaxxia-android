@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-
-    <!-- Bottom Navigation Bar Color -->
-    <color name="colorBottomNav">#008577</color>
+    <!-- Default Colors -->
+    <color name="colorPrimary">#FDCB15</color>
+    <color name="colorPrimaryDark">#A4A3A1</color>
+    <color name="colorAccent">#474441</color>
 </resources>

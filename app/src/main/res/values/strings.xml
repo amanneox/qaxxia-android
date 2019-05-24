@@ -3,9 +3,9 @@
     <string name="app_name">Qaxxia</string>
 
     <!-- Bottom Navigation Items -->
-    <string name="bottom_item1">Item_1</string>
-    <string name="bottom_item2">Item_2</string>
-    <string name="bottom_item3">Item_3</string>
-    <string name="bottom_item4">Item_4</string>
-    <string name="bottom_item5">Item_5</string>
+    <string name="bottom_item1">Home</string>
+    <string name="bottom_item2">Hot</string>
+    <string name="bottom_item3">Orders</string>
+    <string name="bottom_item4">Profile</string>
+    <string name="bottom_item5">Favorite</string>
 </resources>
