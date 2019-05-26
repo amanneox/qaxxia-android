@@ -13,8 +13,11 @@
 
         <RelativeLayout
             android:id="@+id/container_homefragview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <RelativeLayout
                 android:id="@+id/container_slideshow"
@@ -28,17 +31,37 @@
                     android:layout_height="250dp"
                     android:layout_alignParentTop="true" />
 
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator_slideshow"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" />
+
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/container_categories"
-                android:layout_below="@id/container_slideshow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@id/container_slideshow"
+                android:layout_marginTop="20dp">
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerview_categories"
-                    android:scrollbars="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="horizontal" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/container_products"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/container_categories"
+                android:layout_marginTop="20dp">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerview_products"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
