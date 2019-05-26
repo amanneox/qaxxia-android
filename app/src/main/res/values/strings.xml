@@ -8,4 +8,6 @@
     <string name="bottom_item3">Orders</string>
     <string name="bottom_item4">Profile</string>
     <string name="bottom_item5">Favorite</string>
+
+    <string name="slideshowdesc">Slide Show Image</string>
 </resources>
