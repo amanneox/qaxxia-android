@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_homefrag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/container_homefragview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/container_slideshow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/pager_slideshow"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_alignParentTop="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/container_categories"
+                android:layout_below="@id/container_slideshow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerview_categories"
+                    android:scrollbars="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
