@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:scrollbars="none">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraint_homefrag"
@@ -34,7 +35,9 @@
                 <me.relex.circleindicator.CircleIndicator
                     android:id="@+id/indicator_slideshow"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp" />
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"/>
 
             </RelativeLayout>
 
@@ -49,7 +52,7 @@
                     android:id="@+id/recyclerview_categories"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scrollbars="horizontal" />
+                    android:scrollbars="none" />
 
             </RelativeLayout>
 

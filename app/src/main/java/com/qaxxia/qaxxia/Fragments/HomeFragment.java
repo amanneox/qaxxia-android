@@ -33,14 +33,7 @@ public class HomeFragment extends Fragment {
     private ViewPager slideshowpager;
 
     private List<CategoryModel> categorylist = new ArrayList<>();
-    private RecyclerView mRecylerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-
     private List<HomeProductModel> productlist = new ArrayList<>();
-    private RecyclerView pRecylerView;
-    private RecyclerView.Adapter pAdapter;
-    private RecyclerView.LayoutManager pLayoutManager;
 
 
     public static HomeFragment newInstance() {
@@ -82,22 +75,21 @@ public class HomeFragment extends Fragment {
             }
         }, 1500, 1500);
 
-        mRecylerView = view.findViewById(R.id.recyclerview_categories);
-        mLayoutManager = new LinearLayoutManager(getActivity());
-        ((LinearLayoutManager) mLayoutManager).setOrientation(LinearLayoutManager.HORIZONTAL);
+        RecyclerView mRecylerView = view.findViewById(R.id.recyclerview_categories);
+        mRecylerView.setNestedScrollingEnabled(false);
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+        mLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         mRecylerView.setLayoutManager(mLayoutManager);
-        mAdapter = new CategoryAdapter(categorylist);
+        RecyclerView.Adapter mAdapter = new CategoryAdapter(categorylist);
         mRecylerView.setAdapter(mAdapter);
 
         getCategories();
 
-        pRecylerView = view.findViewById(R.id.recyclerview_products);
-        pRecylerView.setHasFixedSize(true);
-        pRecylerView.setItemViewCacheSize(20);
-        pLayoutManager = new GridLayoutManager(getActivity(), 2);
-        pLayoutManager.setItemPrefetchEnabled(true);
+        RecyclerView pRecylerView = view.findViewById(R.id.recyclerview_products);
+        pRecylerView.setNestedScrollingEnabled(false);
+        RecyclerView.LayoutManager pLayoutManager = new GridLayoutManager(getActivity(), 2);
         pRecylerView.setLayoutManager(pLayoutManager);
-        pAdapter = new HomeProductAdapter(productlist);
+        RecyclerView.Adapter pAdapter = new HomeProductAdapter(productlist);
         pAdapter.setHasStableIds(true);
         pRecylerView.setAdapter(pAdapter);
 

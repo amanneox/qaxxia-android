@@ -15,7 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_margin="10dp"
-            android:src="@drawable/dummy_image"
             android:scaleType="fitXY"/>
 
         <TextView
@@ -24,15 +23,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/productimage_holder"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="3dp"
-            android:text="@string/bottom_item1" />
+            android:layout_marginTop="3dp" />
 
         <TextView
             android:id="@+id/productprice_holder"
             android:layout_below="@id/productname_holder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bottom_item1"
             android:layout_marginStart="10dp" />
 
     </RelativeLayout>
