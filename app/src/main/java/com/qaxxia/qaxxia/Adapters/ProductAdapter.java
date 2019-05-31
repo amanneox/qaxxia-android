@@ -10,14 +10,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.qaxxia.qaxxia.Models.HomeProductModel;
+import com.qaxxia.qaxxia.Models.ProductModel;
 import com.qaxxia.qaxxia.R;
 
 import java.util.List;
 
-public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.MainViewHolder> {
+public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MainViewHolder> {
 
-    private List<HomeProductModel> productlist;
+    private List<ProductModel> productlist;
 
     public static class MainViewHolder extends RecyclerView.ViewHolder {
         private TextView productname_textview;
@@ -34,7 +34,7 @@ public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.
         }
     }
 
-    public HomeProductAdapter(List<HomeProductModel> productlist) {
+    public ProductAdapter(List<ProductModel> productlist) {
         this.productlist = productlist;
     }
 
@@ -47,10 +47,10 @@ public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
-        HomeProductModel homeProductModel = productlist.get(position);
-        holder.productname_textview.setText(homeProductModel.getProduct_name());
-        holder.productprice_textview.setText(homeProductModel.getProduct_price());
-        Glide.with(holder.productimage_imageview.getContext()).load(homeProductModel.getProduct_imageurl()).into(holder.productimage_imageview);
+        ProductModel productModel = productlist.get(position);
+        holder.productname_textview.setText(productModel.getProduct_name());
+        holder.productprice_textview.setText(productModel.getProduct_price());
+        Glide.with(holder.productimage_imageview.getContext()).load(productModel.getProduct_imageurl()).into(holder.productimage_imageview);
         holder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

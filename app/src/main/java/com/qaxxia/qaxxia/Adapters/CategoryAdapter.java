@@ -1,7 +1,6 @@
 package com.qaxxia.qaxxia.Adapters;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.RecyclerView;
@@ -52,7 +51,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MainVi
         holder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent in = new Intent(view.getContext(), );
+                //Intent in = new Intent(view.getContext(), SubCategoryActivity.class);
                 //view.getContext().startActivity(in);
             }
         });
