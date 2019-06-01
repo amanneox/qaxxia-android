@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.qaxxia.qaxxia.Adapters.CategoryAdapter;
 import com.qaxxia.qaxxia.Adapters.ProductAdapter;
@@ -28,7 +29,7 @@ import me.relex.circleindicator.CircleIndicator;
 
 public class HomeFragment extends Fragment {
 
-    private static final int[] images = {R.drawable.dummy_image, R.drawable.dummy_image, R.drawable.dummy_image, R.drawable.dummy_image, R.drawable.dummy_image};
+    private static final int[] images = {R.drawable.dummy_background, R.drawable.dummy_background, R.drawable.dummy_background, R.drawable.dummy_background, R.drawable.dummy_background};
     private ArrayList<Integer> slide_images = new ArrayList<Integer>();
     private static int currentPage = 0;
     private ViewPager slideshowpager;
@@ -76,6 +77,8 @@ public class HomeFragment extends Fragment {
             }
         }, 1500, 1500);
 
+        Button moreCategories = view.findViewById(R.id.more_categories);
+
         RecyclerView mRecylerView = view.findViewById(R.id.recyclerview_categories);
         mRecylerView.setNestedScrollingEnabled(false);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
@@ -85,6 +88,12 @@ public class HomeFragment extends Fragment {
         mRecylerView.setAdapter(mAdapter);
 
         getCategories();
+
+        moreCategories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
 
         RecyclerView pRecylerView = view.findViewById(R.id.recyclerview_products);
         pRecylerView.setNestedScrollingEnabled(false);
