@@ -2,6 +2,7 @@ package com.qaxxia.qaxxia.Fragments;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
@@ -10,12 +11,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.qaxxia.qaxxia.Adapters.CategoryAdapter;
-import com.qaxxia.qaxxia.Adapters.HomeProductAdapter;
+import com.qaxxia.qaxxia.Adapters.ProductAdapter;
 import com.qaxxia.qaxxia.Adapters.SlideShowPagerAdapter;
 import com.qaxxia.qaxxia.Models.CategoryModel;
-import com.qaxxia.qaxxia.Models.HomeProductModel;
+import com.qaxxia.qaxxia.Models.ProductModel;
 import com.qaxxia.qaxxia.R;
 
 import java.util.ArrayList;
@@ -27,13 +29,13 @@ import me.relex.circleindicator.CircleIndicator;
 
 public class HomeFragment extends Fragment {
 
-    private static final int[] images = {R.drawable.dummy_image, R.drawable.dummy_image, R.drawable.dummy_image, R.drawable.dummy_image, R.drawable.dummy_image};
+    private static final int[] images = {R.drawable.dummy_background, R.drawable.dummy_background, R.drawable.dummy_background, R.drawable.dummy_background, R.drawable.dummy_background};
     private ArrayList<Integer> slide_images = new ArrayList<Integer>();
     private static int currentPage = 0;
     private ViewPager slideshowpager;
 
     private List<CategoryModel> categorylist = new ArrayList<>();
-    private List<HomeProductModel> productlist = new ArrayList<>();
+    private List<ProductModel> productlist = new ArrayList<>();
 
 
     public static HomeFragment newInstance() {
@@ -44,7 +46,7 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater layoutInflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater layoutInflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = layoutInflater.inflate(R.layout.activity_homefragment, container, false);
         for (int i = 0; i < images.length; ++i) {
@@ -75,6 +77,8 @@ public class HomeFragment extends Fragment {
             }
         }, 1500, 1500);
 
+        Button moreCategories = view.findViewById(R.id.more_categories);
+
         RecyclerView mRecylerView = view.findViewById(R.id.recyclerview_categories);
         mRecylerView.setNestedScrollingEnabled(false);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
@@ -85,11 +89,17 @@ public class HomeFragment extends Fragment {
 
         getCategories();
 
+        moreCategories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
         RecyclerView pRecylerView = view.findViewById(R.id.recyclerview_products);
         pRecylerView.setNestedScrollingEnabled(false);
         RecyclerView.LayoutManager pLayoutManager = new GridLayoutManager(getActivity(), 2);
         pRecylerView.setLayoutManager(pLayoutManager);
-        RecyclerView.Adapter pAdapter = new HomeProductAdapter(productlist);
+        RecyclerView.Adapter pAdapter = new ProductAdapter(productlist);
         pAdapter.setHasStableIds(true);
         pRecylerView.setAdapter(pAdapter);
 
@@ -114,22 +124,22 @@ public class HomeFragment extends Fragment {
     }
 
     private void getProducts() {
-        HomeProductModel homeProductModel = new HomeProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 1", "$50.00");
-        productlist.add(homeProductModel);
-        homeProductModel = new HomeProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 2", "$50.00");
-        productlist.add(homeProductModel);
-        homeProductModel = new HomeProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 3", "$50.00");
-        productlist.add(homeProductModel);
-        homeProductModel = new HomeProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 4", "$50.00");
-        productlist.add(homeProductModel);
-        homeProductModel = new HomeProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 5", "$50.00");
-        productlist.add(homeProductModel);
-        homeProductModel = new HomeProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 6", "$50.00");
-        productlist.add(homeProductModel);
-        homeProductModel = new HomeProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 7", "$50.00");
-        productlist.add(homeProductModel);
-        homeProductModel = new HomeProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 8", "$50.00");
-        productlist.add(homeProductModel);
+        ProductModel productModel = new ProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 1", "$50.00");
+        productlist.add(productModel);
+        productModel = new ProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 2", "$50.00");
+        productlist.add(productModel);
+        productModel = new ProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 3", "$50.00");
+        productlist.add(productModel);
+        productModel = new ProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 4", "$50.00");
+        productlist.add(productModel);
+        productModel = new ProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 5", "$50.00");
+        productlist.add(productModel);
+        productModel = new ProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 6", "$50.00");
+        productlist.add(productModel);
+        productModel = new ProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 7", "$50.00");
+        productlist.add(productModel);
+        productModel = new ProductModel("https://www.lg.com/cz/content/img/support/img-dummy-product.jpg", "Product 8", "$50.00");
+        productlist.add(productModel);
 
     }
 }

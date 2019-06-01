@@ -1,11 +1,11 @@
 package com.qaxxia.qaxxia.Models;
 
-public class HomeProductModel {
+public class ProductModel {
     private String product_imageurl;
     private String product_name;
     private String product_price;
 
-    public HomeProductModel(String product_imageurl, String product_name, String product_price) {
+    public ProductModel(String product_imageurl, String product_name, String product_price) {
         this.product_imageurl = product_imageurl;
         this.product_name = product_name;
         this.product_price = product_price;
