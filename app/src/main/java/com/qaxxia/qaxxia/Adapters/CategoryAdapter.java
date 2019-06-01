@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.qaxxia.qaxxia.Models.CategoryModel;
 import com.qaxxia.qaxxia.R;
+import com.qaxxia.qaxxia.SubCategoryActivity;
 
 import java.util.List;
 
@@ -51,8 +52,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MainVi
         holder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent in = new Intent(view.getContext(), SubCategoryActivity.class);
-                //view.getContext().startActivity(in);
+                Intent in = new Intent(view.getContext(), SubCategoryActivity.class);
+                view.getContext().startActivity(in);
             }
         });
     }
