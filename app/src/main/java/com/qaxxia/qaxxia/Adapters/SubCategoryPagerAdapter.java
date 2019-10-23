@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import com.qaxxia.qaxxia.Fragments.ProductFragment;
 import com.qaxxia.qaxxia.Models.SubCategoryModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SubCategoryPagerAdapter extends FragmentStatePagerAdapter {
